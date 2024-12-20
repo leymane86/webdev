@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding: 0;
+      box-sizing: border-box;
+      color: white;
+
+    }
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .testimonial{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width:600px;
+      background-color: rgba(0, 170, 255, 0.777);
+      justify-content: flex-start;
+    }
+    .progress-bar{
+      display: flex;
+      justify-content: flex-start;
+      background-color: black;
+      height:10px;
+      width: 300px;
+      margin: 25px;
+    }
+    .progress-bar-overlay{
+      content: '';
+      background-color: rgb(255, 255, 255);
+      height:10px;
+      width: 5%;
+      display: block;
+    }
+    .quote{
+      margin: 0;
+      padding: 0;
+      display: flex;
+      line-height: 1.5rem;
+      text-align: justify;
+      padding: 5%;
+    }
+    .front-quote { 
+      font-weight: bold;
+      font-size:100px;
+      color:#ddff00;
+      position: relative;
+      top: 10px;
+      right: 15px;
+      } 
+      .back-quote { 
+      content: close-quote;
+      font-weight: bold;
+      font-size:100px;
+      color:#ddff00;
+      position: relative;
+      top: 10px;
+      left: 15px;
+      
+      }
+      .picture{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+      }
+      .image{
+        grid-row: span 2;
+        border-radius: 50%;
+        align-self: center;
+        justify-self: center;
+      }
+      .name,.title{
+        padding: 10px;
+        align-self: center;
+        justify-self: center;
+      }
+  </style>
+</head>
+<body>
+  <div class="testimonial">
+    <div class="progress-bar"><div class="progress-bar-overlay"></div></div>
+    <div class="quote"><div class="front-quote">“</div><div class="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius hic voluptas. Minima, rem magnam. Cupiditate nisi quae culpa tempore iure quidem autem aliquid! Recusandae perferendis doloremque sit voluptas. Expedita.
+    Accusantium, odio fugiat sunt dignissimos quia animi facere possimus quo accusamus sed quae hic. Similique, delectus dignissimos quo cumque molestias esse corrupti, natus cum itaque quae magni laborum, quis harum.</div><div class="back-quote">”</div></div>
+    <div class="picture"><img class="image" src="https://d1jyxxz9imt9yb.cloudfront.net/animal/735/meta_image/regular/AdobeStock_362156363_441361_reduced.jpg" height=40px width=auto><div class = "name">Antelope</div><div class="title">Receptionist</div></div>
+  </div>
+  <script defer>
+    persons = [];
+    const progress_bar = document.querySelector(".progress-bar-overlay");
+    init();
+    var percentage=0;
+    const user_data = {};
+    function reset()
+    {
+      percentage=0;
+      update(0);
+
+    }
+    function update_percentage()
+    {
+      progress_bar.style.width=`${percentage}%`
+      percentage=percentage+.5;
+      percentage == 100 ? reset() : null;
+    }
+    setInterval(update_percentage, 50);
+    function init()
+    {
+      const person = {
+        text:"",
+        picture:"",
+        name:"",
+        title:""
+      }
+    const antelope=Object.create(person);
+    antelope.text="A";
+    antelope.picture="https://www.akronzoo.org/sites/default/files/styles/square_large/public/assets/animals/Spekes-gazelle-main.png?h=00546c34&itok=rO2YQNwu"
+    antelope.name="antelope"
+    antelope.title="secretary"
+    persons.push(antelope);
+    console.log(persons[0])
+
+    const not_antelope=Object.create(person);
+    not_antelope.text="Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus eius hic voluptas. Minima, rem magnam. Cupiditate nisi quae culpa tempore iure quidem autem aliquid! Recusandae perferendis doloremque sit voluptas. Expedita."
+    not_antelope.picture="https://d1jyxxz9imt9yb.cloudfront.net/animal/735/meta_image/regular/AdobeStock_362156363_441361_reduced.jpg"
+    not_antelope.name="Antelope"
+    not_antelope.title="secrtary"
+  }
+    function update(i)
+    {
+      const text = document.querySelector(".text");
+      const image = document.querySelector(".image");
+      text.innerHTML=persons[0].text;
+      image.setAttribute("src",persons[0].picture);
+    }
+
+  </script>
+</body>
+</html>
