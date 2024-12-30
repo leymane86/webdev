@@ -132,7 +132,7 @@
         Some work I have done...
         <div class = "text" ></div>
         <div class="progress-bar"><div class="progress-bar-overlay"></div></div>
-       <!--  <img class = "picture" src="" height="500px" width="500px"> -->
+
     </div>
 
 </p>
@@ -171,15 +171,11 @@
    
     const president=Object.create(person);
     president.text="I acted as president of a manufactring business, apply analytical skills and problem solving daily"
-    //president.picture="https://www.akronzoo.org/sites/default/files/styles/square_large/public/assets/animals/Spekes-gazelle-main.png?h=00546c34&itok=rO2YQNwu"
-    //antelope.name="antelope"
-    //antelope.title="Lorem, ipsum dolor"
+
     persons.push(president);
     const business_dev=Object.create(person);
     business_dev.text="I developed business and grew our customer base"
-    //business_dev.picture="https://d1jyxxz9imt9yb.cloudfront.net/animal/735/meta_image/regular/AdobeStock_362156363_441361_reduced.jpg"
-    //not_antelope.name="Antelope"
-    //not_antelope.title="Lorem, ipsum dolor"
+
      persons.push(business_dev);
      update();
   }
@@ -192,22 +188,18 @@
         index--;
 
         const text = document.querySelector(".text");
-      //  const image = document.querySelector(".picture");
-     // const title= document.querySelector(".title");
-     // const name = document.querySelector(".name");
+
       text.innerHTML=persons[index].text;
-      //image.setAttribute("src",persons[index].picture);
+
 
       var newone = text.cloneNode(true);
       console.log(newone);
       text.parentNode.replaceChild(newone, text);
 
-      //var newone2 = image.cloneNode(true);
-      //console.log(image);
-      //image.parentNode.replaceChild(newone2, image);
+
 
       newone.classList.add("fade-in-image");
-      //newone2.classList.add("fade-in-image");
+
 
     }
 
