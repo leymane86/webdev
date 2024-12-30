@@ -15,11 +15,23 @@
             box-sizing: content-box;
             scroll-behavior: smooth;   
         }
+        h1{
+            margin:0;
+        }
         body{
             width: 75vw;
             margin: 0 auto;
             height: 100vh;
            
+        }
+        nav{
+            top: 0px;
+            position: fixed;
+            width: 75vw;
+            border-bottom: 2px solid white;
+            background-color: black;
+            padding-bottom: 50px;
+            padding-top: 50px;
         }
         article{
             margin-top: var(--size_of_font);
@@ -31,15 +43,7 @@
             align-items: center;
             padding: 50px;
         }
-        nav{
-            top: 0px;
-            position: fixed;
-            width: 75vw;
-            border-bottom: 2px solid white;
-            background-color: black;
-            padding-bottom: 50px;
-            padding-top: 50px;
-        }
+
         ul{
             list-style: none;
             display: flex;
@@ -48,9 +52,6 @@
             font-size: calc(2*var(--size_of_font));
 
         }
-        h1{
-            margin: 1rem;
-        } 
         p{
             margin: 1rem;
         }
@@ -113,7 +114,9 @@
 <body>
     <nav><ul><li><a href="#">Top</a></li><li><a href="#about">About</a></li><li><a href="#bio">Bio</a></li><li><a href="#work">Work</a></li></ul></nav>
     <article>
+        <p>
     <h1>This is my personal website</h1>
+            </p>
     <div class="line"></div>
     <p id="about">It is meant to demonstrate my abilities in front end web development</p>
     <div class="line"></div>
